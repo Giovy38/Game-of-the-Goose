@@ -23,6 +23,35 @@
   color: white;
 }
 
+#dice-roll-section {
+  margin-top: 30px;
+}
+#dice-roll-section .dice-roll-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#dice-roll-section .dice-roll-container button {
+  width: 250px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  background-color: #0F0C29;
+  color: white;
+  font-size: 30px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+#dice-roll-section .dice-roll-container button:hover {
+  box-shadow: 5px 5px 10px white;
+}
+#dice-roll-section .dice-roll-container img {
+  width: 60px;
+  height: 60px;
+  transform: rotate(30deg);
+}
+
 #player-img-section .player-img-container {
   display: flex;
   align-items: center;
@@ -47,6 +76,31 @@
 }
 #player-img-section .player-img-container .img-container img:hover {
   box-shadow: 5px 5px 10px black;
+}
+
+#table-game-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#table-game-section .table-game-container {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  width: 1300px;
+  margin-left: 100px;
+}
+#table-game-section .table-game-container .table-cell {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100px;
+  height: 100px;
+}
+#table-game-section .table-game-container .table-cell img {
+  width: 50px;
+  height: 50px;
+}
+#table-game-section .table-game-container .visible-cells {
+  border: 0.5px solid black;
 }
 
 * {

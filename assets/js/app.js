@@ -48,7 +48,8 @@ function choseImg(e){
 
         if(imgChosen >= playerNum){
             playerImgSection.classList.add('hidden');
-        }
+            document.getElementById('dice-roll-section').classList.remove('hidden');
+        }b
         
         console.log(playerImg);
     }

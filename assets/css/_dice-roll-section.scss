@@ -1,0 +1,31 @@
+@import './utilies';
+
+#dice-roll-section{
+    margin-top: 30px;
+    .dice-roll-container{
+        @include flexCenter;
+        gap: 10px;
+        
+        button{
+            width: 250px;
+            height: 60px;
+            border-radius: 10px;
+            border: none;
+            background-color:  $button-1 ;
+            color: #ffff;
+            font-size: 30px;
+            text-transform: capitalize;
+            cursor: pointer;
+
+            &:hover{
+                box-shadow: 5px 5px 10px white;
+            }
+        }
+
+        img{
+            width: 60px;
+            height: 60px;
+            transform: rotate(30deg);
+        }
+    }
+}

@@ -199,6 +199,7 @@ function playerMoove(){
             player1Position -= 62;
             player1Position = 62 - player1Position;
         }
+        player1Position = specialCaselControll(player1Position, totalRoll);
         actualPosition = player1Position;
         tableGameOrder[player1Position].children[0].src = playerImg[0];
         actualPlayerTurn++
@@ -210,6 +211,7 @@ function playerMoove(){
             player2Position -= 62;
             player2Position = 62 - player2Position;
         }
+        player2Position = specialCaselControll(player2Position, totalRoll);
         actualPosition = player2Position;
         tableGameOrder[player2Position].children[1].src = playerImg[1];
         actualPlayerTurn++
@@ -221,6 +223,7 @@ function playerMoove(){
             player3Position -= 62;
             player3Position = 62 - player3Position;
         }
+        player3Position = specialCaselControll(player3Position, totalRoll);
         actualPosition = player3Position;
         tableGameOrder[player3Position].children[2].src = playerImg[2];
         actualPlayerTurn++
@@ -232,6 +235,7 @@ function playerMoove(){
             player4Position -= 62;
             player4Position = 62 - player4Position;
         }
+        player4Position = specialCaselControll(player4Position, totalRoll);
         actualPosition = player4Position;
         tableGameOrder[player4Position].children[3].src = playerImg[3];
         actualPlayerTurn = 1;
@@ -246,10 +250,14 @@ function playerMoove(){
 
 function isWin(){
     if(actualPosition === 62){
+        if(actualPlayerTurn === 1){
+            actualPlayerTurn = 5;
+        }
         document.getElementById('winner-text').innerHTML = `Congratulation player ${actualPlayerTurn-1} you are the WINNER`;
         document.getElementById('winner-img').src = playerImg[actualPlayerTurn-2];
 
         document.getElementById('winner-section').classList.remove('hidden');
+        document.getElementById('dice-roll-section').classList.add('hidden');
 
         setTimeout(function() {
             document.getElementById('winner-img').classList.remove('shake');
@@ -262,4 +270,75 @@ document.getElementById('replay-button').addEventListener('click', newGame);
 function newGame(){
     location.reload();
     return false;
+}
+
+const alertInfo = document.getElementById('alert-section');
+const alertInfoTitle = alertInfo.children[0].children[0];
+const alertInfoDetails = alertInfo.children[0].children[1];
+
+function specialCaselControll(playerPosition, totalRoll){
+
+    // -CASELLE DELL'OCA (5, 9, 18, 27, 36, 45, 54): 
+    if(playerPosition === 5 || playerPosition === 18|| playerPosition === 27|| playerPosition === 36|| playerPosition === 45|| playerPosition === 54 ){
+        playerPosition += totalRoll;
+        // alert(`CASELLE DELL OCA, ti muovi di altre ${totalRoll} caselle`)
+        alertInfo.classList.remove('hidden');
+        alertInfoTitle.innerHTML = `CASELLE DELL'OCA (5, 9, 18, 27, 36, 45, 54)`
+        alertInfoDetails.innerHTML= `Il giocatore che si muove su 
+        una casella dell'oca si muove 
+        di un numero di caselle pari 
+        a quelle di cui si e' appena 
+        spostato; la disposizione delle
+         caselle dell'oca fa si' che se 
+        un giocatore, durante il primo
+         turno, lancia un 9, vincera' 
+        la partita in una sola mossa`;
+        setTimeout(function() {
+            alertInfo.classList.add('hidden');
+          }, 7000);
+        return playerPosition;
+    }
+
+    if(playerPosition === 9){
+        alert('CASELLA DELL OCA, 9 è il lancio perfetto, CONGRATULAZIONI');
+        playerPosition = 62;
+        return playerPosition;
+    }
+
+    if(playerPosition === 6){
+        playerPosition += totalRoll;
+        alertInfo.classList.remove('hidden');
+        alertInfoTitle.innerHTML = `PONTE(6)`;
+        alertInfoDetails.innerHTML= ` si ripete il movimento`;
+        setTimeout(function() {
+            alertInfo.classList.add('hidden');
+          }, 7000);
+        return playerPosition;
+    }
+
+    if(playerPosition === 42){
+        playerPosition = 39;
+        alertInfo.classList.remove('hidden');
+        alertInfoTitle.innerHTML = `LABIRINTO(42)`;
+        alertInfoDetails.innerHTML= ` si torna indietro alla casella 39`;
+        setTimeout(function() {
+            alertInfo.classList.add('hidden');
+          }, 7000);
+        return playerPosition;
+    }
+
+    if(playerPosition === 58){
+        playerPosition = 1;
+        alertInfo.classList.remove('hidden');
+        alertInfoTitle.innerHTML = `SCHELETRO(58)`;
+        alertInfoDetails.innerHTML= ` si torna alla casella 1`;
+        setTimeout(function() {
+            alertInfo.classList.add('hidden');
+          }, 7000);
+        return playerPosition;
+    }
+
+
+
+    return playerPosition;
 }

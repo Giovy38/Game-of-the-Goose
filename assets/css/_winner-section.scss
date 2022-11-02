@@ -4,7 +4,7 @@
     .winner-container{
         position: absolute;
         top: 190px;
-        right: 0;
+        right: 15px;
         @include flexCenter;
         flex-direction: column;
         text-transform: capitalize;
@@ -29,6 +29,7 @@
             width: 300px;
             border-radius: 10px;
             margin-top: 10px;
+            box-shadow: 5px 5px 10px black;
         }
     }
 }

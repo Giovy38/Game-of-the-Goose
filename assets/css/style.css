@@ -112,6 +112,36 @@
   justify-content: center;
 }
 
+#winner-section .winner-container {
+  position: absolute;
+  top: 190px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+#winner-section .winner-container button {
+  margin-top: 10px;
+  width: 140px;
+  height: 50px;
+  background-color: #00C9FF;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 25px;
+  cursor: pointer;
+}
+#winner-section .winner-container button:hover {
+  box-shadow: 5px 5px 10px black;
+}
+#winner-section .winner-container img {
+  width: 300px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
 * {
   padding: 0;
   margin: 0;

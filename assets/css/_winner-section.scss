@@ -1,0 +1,34 @@
+@import './utilies';
+
+#winner-section{
+    .winner-container{
+        position: absolute;
+        top: 190px;
+        right: 0;
+        @include flexCenter;
+        flex-direction: column;
+        text-transform: capitalize;
+
+        button{
+            margin-top: 10px;
+            width: 140px;
+            height: 50px;
+            background-color: $button-2;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 25px;
+            cursor: pointer;
+
+            &:hover{
+                box-shadow: 5px 5px 10px black;
+            }
+        }
+
+        img{
+            width: 300px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    }
+}

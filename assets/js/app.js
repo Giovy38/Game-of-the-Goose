@@ -246,6 +246,20 @@ function playerMoove(){
 
 function isWin(){
     if(actualPosition === 62){
-        alert(`congratulation player ${actualPlayerTurn-1} you WIN`)
+        document.getElementById('winner-text').innerHTML = `Congratulation player ${actualPlayerTurn-1} you are the WINNER`;
+        document.getElementById('winner-img').src = playerImg[actualPlayerTurn-2];
+
+        document.getElementById('winner-section').classList.remove('hidden');
+
+        setTimeout(function() {
+            document.getElementById('winner-img').classList.remove('shake');
+          }, 2000);
     }
+}
+
+document.getElementById('replay-button').addEventListener('click', newGame);
+
+function newGame(){
+    location.reload();
+    return false;
 }

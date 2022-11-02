@@ -1,0 +1,28 @@
+#player-number-section{
+    .player-number-container{
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-transform: capitalize;
+
+        .button-container{
+            margin-top: 20px;
+            button{
+                width: 60px;
+                height: 60px;
+                cursor: pointer;
+                background: $button-2;
+                border: none;
+                font-size: 25px;
+
+                &:hover{
+                    font-size: 30px;
+                    background: $button-1;
+                    color: white;
+                }
+            }
+        }
+    }
+}

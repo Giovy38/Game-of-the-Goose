@@ -1,0 +1,34 @@
+#player-number-section .player-number-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+#player-number-section .player-number-container .button-container {
+  margin-top: 20px;
+}
+#player-number-section .player-number-container .button-container button {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background: #00C9FF;
+  border: none;
+  font-size: 25px;
+}
+#player-number-section .player-number-container .button-container button:hover {
+  font-size: 30px;
+  background: #0F0C29;
+  color: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #076585, white);
+}/*# sourceMappingURL=style.css.map */

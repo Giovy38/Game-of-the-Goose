@@ -103,6 +103,15 @@
   border: 0.5px solid black;
 }
 
+#dice-roll-animation-section {
+  margin-top: 30px;
+}
+#dice-roll-animation-section .dice-roll-animation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -115,4 +124,33 @@ body {
 
 .hidden {
   display: none;
+}
+
+.shake {
+  -webkit-animation: shake 0.5s infinite;
+          animation: shake 0.5s infinite;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
 }/*# sourceMappingURL=style.css.map */

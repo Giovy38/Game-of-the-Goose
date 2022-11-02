@@ -1,0 +1,9 @@
+@import './utilies';
+
+#dice-roll-animation-section{
+    margin-top: 30px;
+    .dice-roll-animation-container{
+        @include flexCenter;
+
+    }
+}

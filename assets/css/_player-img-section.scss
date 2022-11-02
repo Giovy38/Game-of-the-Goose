@@ -1,0 +1,26 @@
+@import './utilies';
+
+#player-img-section{
+    .player-img-container{
+        @include flexCenter;
+        flex-direction: column;
+        text-transform: capitalize;
+
+        .img-container{
+            margin-top: 10px;
+            @include flexCenter;
+            gap: 15px;
+            img{
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+                cursor: pointer;
+                border-radius: 50%;
+
+                &:hover{
+                    box-shadow: 5px 5px 10px black;
+                }
+            }
+        }
+    }
+}

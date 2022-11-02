@@ -10,6 +10,7 @@ buttonContainer.addEventListener('click', playerNumber);
 const playerImgSection = document.getElementById('player-img-section');
 // select the game table 
 const tableGame = document.querySelectorAll('.visible-cells');
+const emptySpace = '/assets/img/emptyspace.png';
 
 
 
@@ -161,8 +162,90 @@ function roll(){
         document.querySelector("#die-1").setAttribute("src", images[dieOneValue]);
         document.querySelector("#die-2").setAttribute("src", images[dieTwoValue]);
         totalRoll = (dieOneValue +1) + (dieTwoValue + 1)
-        console.log(totalRoll);
+        
+        playerMoove();  
+        isWin();
     },
     1000
     );
+
+
+}
+
+// roll logic 
+
+// console.log(tableGameOrder) // tabellone di gioco ordinato 
+// console.log(playerImg) // 0 player 1... 1 player 2 ... 
+
+let player1Position = 0;
+let player2Position = 0;
+let player3Position = 0;
+let player4Position = 0;
+let actualPlayerTurn = 1;
+let actualPosition = 0;
+
+
+function playerMoove(){
+
+    if(actualPlayerTurn > playerNum){
+        actualPlayerTurn = 1
+    }
+
+   switch (actualPlayerTurn) {
+    case 1:
+        tableGameOrder[player1Position].children[0].src = emptySpace;
+        player1Position += totalRoll;
+        if(player1Position > 62){
+            player1Position -= 62;
+            player1Position = 62 - player1Position;
+        }
+        actualPosition = player1Position;
+        tableGameOrder[player1Position].children[0].src = playerImg[0];
+        actualPlayerTurn++
+        break;
+    case 2:
+        tableGameOrder[player2Position].children[1].src = emptySpace;
+        player2Position += totalRoll;
+        if(player2Position > 62){
+            player2Position -= 62;
+            player2Position = 62 - player2Position;
+        }
+        actualPosition = player2Position;
+        tableGameOrder[player2Position].children[1].src = playerImg[1];
+        actualPlayerTurn++
+        break;
+    case 3:
+        tableGameOrder[player3Position].children[2].src = emptySpace;
+        player3Position += totalRoll;
+        if(player3Position > 62){
+            player3Position -= 62;
+            player3Position = 62 - player3Position;
+        }
+        actualPosition = player3Position;
+        tableGameOrder[player3Position].children[2].src = playerImg[2];
+        actualPlayerTurn++
+        break;
+    case 4:
+        tableGameOrder[player4Position].children[3].src = emptySpace;
+        player4Position += totalRoll;
+        if(player4Position > 62){
+            player4Position -= 62;
+            player4Position = 62 - player4Position;
+        }
+        actualPosition = player4Position;
+        tableGameOrder[player4Position].children[3].src = playerImg[3];
+        actualPlayerTurn = 1;
+        break;
+   
+    default:
+        break;
+   }
+
+
+}
+
+function isWin(){
+    if(actualPosition === 62){
+        alert(`congratulation player ${actualPlayerTurn-1} you WIN`)
+    }
 }

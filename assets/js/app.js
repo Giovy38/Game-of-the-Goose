@@ -10,7 +10,7 @@ buttonContainer.addEventListener('click', playerNumber);
 const playerImgSection = document.getElementById('player-img-section');
 // select the game table 
 const tableGame = document.querySelectorAll('.visible-cells');
-const emptySpace = '/assets/img/emptyspace.png';
+const emptySpace = 'assets/img/emptyspace.png';
 
 
 
@@ -139,12 +139,12 @@ tableGameOrder[62] = tableGame[36];
 
 document.getElementById('roll-dice-button').addEventListener('click', roll)
 
-let images = ["/assets/img/dice-01.svg",
-"/assets/img/dice-02.svg",
-"/assets/img/dice-03.svg",
-"/assets/img/dice-04.svg",
-"/assets/img/dice-05.svg",
-"/assets/img/dice-06.svg"];
+let images = ["assets/img/dice-01.svg",
+"assets/img/dice-02.svg",
+"assets/img/dice-03.svg",
+"assets/img/dice-04.svg",
+"assets/img/dice-05.svg",
+"assets/img/dice-06.svg"];
 let dice = document.querySelectorAll(".dice-img");
 
 let totalRoll;

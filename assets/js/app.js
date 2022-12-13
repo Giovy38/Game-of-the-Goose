@@ -342,3 +342,26 @@ function specialCaselControll(playerPosition, totalRoll){
 
     return playerPosition;
 }
+
+// COLOR ASSIGNMENT
+tableGameOrder[5].classList.add('ghoose-cell');
+tableGameOrder[9].classList.add('ghoose-cell');
+tableGameOrder[18].classList.add('ghoose-cell');
+tableGameOrder[27].classList.add('ghoose-cell');
+tableGameOrder[36].classList.add('ghoose-cell');
+tableGameOrder[45].classList.add('ghoose-cell');
+tableGameOrder[54].classList.add('ghoose-cell');
+
+tableGameOrder[6].classList.add('bridge-cell');
+
+tableGameOrder[42].classList.add('maze-cell');
+
+tableGameOrder[58].classList.add('scheleton-cell');
+
+tableGameOrder[62].classList.add('end-cell');
+
+tableGameOrder[0].classList.add('start-cell');
+
+
+
+

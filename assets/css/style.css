@@ -102,6 +102,24 @@
 #table-game-section .table-game-container .visible-cells {
   border: 0.5px solid black;
 }
+#table-game-section .table-game-container .ghoose-cell {
+  background-color: #95DF9D;
+}
+#table-game-section .table-game-container .bridge-cell {
+  background-color: #71bb78;
+}
+#table-game-section .table-game-container .maze-cell {
+  background-color: #D9631A;
+}
+#table-game-section .table-game-container .scheleton-cell {
+  background-color: #DB0D00;
+}
+#table-game-section .table-game-container .end-cell {
+  background-color: #FCEC3F;
+}
+#table-game-section .table-game-container .start-cell {
+  background-color: #4BF9F9;
+}
 
 #dice-roll-animation-section {
   margin-top: 5px;

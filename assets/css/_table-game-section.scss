@@ -26,5 +26,30 @@
         .visible-cells{
             border: 0.5px solid black;
         }
+
+        .ghoose-cell{
+            background-color: $ghoose;
+        }
+
+        .bridge-cell{
+            background-color: $bridge;
+        }
+
+        .maze-cell{
+            background-color: $maze;
+        }
+
+        .scheleton-cell{
+            background-color: $scheleton;
+        }
+
+        .end-cell{
+            background-color: $end;
+        }
+
+        .start-cell{
+            background-color: $start;
+        }
+
     }
 }
